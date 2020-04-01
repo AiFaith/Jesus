@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://aifaith.github.io/Jesus</id>
     <title>圣经阅读</title>
-    <updated>2020-04-01T12:48:38.984Z</updated>
+    <updated>2020-04-01T12:56:09.091Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://aifaith.github.io/Jesus"/>
     <link rel="self" href="https://aifaith.github.io/Jesus/atom.xml"/>
@@ -10,6 +10,27 @@
     <logo>https://aifaith.github.io/Jesus/images/avatar.png</logo>
     <icon>https://aifaith.github.io/Jesus/favicon.ico</icon>
     <rights>All rights reserved 2020, 圣经阅读</rights>
+    <entry>
+        <title type="html"><![CDATA[关于]]></title>
+        <id>https://aifaith.github.io/Jesus/post/关于/</id>
+        <link href="https://aifaith.github.io/Jesus/post/关于/">
+        </link>
+        <updated>2020-04-01T12:55:23.000Z</updated>
+        <content type="html"><![CDATA[<p><strong>欢迎来到弟兄姊妹圣经章节分享-集锦的小站</strong></p>
+<blockquote>
+<ol>
+<li>不准转各群的属世的人和字物；</li>
+<li>不要发称上帝的，上帝是天主教类的称呼，它不相信有神；</li>
+<li>不要发牧师和所谓的耶稣象；</li>
+</ol>
+</blockquote>
+<p>因为他们是以政教合一，教会的只有一就主耶稣基督。所以要以基督耶稣的心为心（<strong>新约-腓立比书  2章1节-4节</strong>）</p>
+<p><strong>仅限诗歌：《诗歌-选本353首附录35首》、《大众歌1千首》</strong></p>
+<p>哈利路亚，阿们!</p>
+<p><strong>小站只收集群内弟兄姊妹从圣经中分享出的章节，方便各位弟兄姊妹查看</strong><br>
+<strong>如文章中出现漏字、错别字、章节不吻合的情况，烦请各位弟兄姊妹在群内指正</strong></p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[新约-帖撒罗尼迦前书  新约-马太福音]]></title>
         <id>https://aifaith.github.io/Jesus/post/新约-帖撒罗尼迦前书  新约-马太福音/</id>
@@ -183,18 +204,6 @@
 <p><strong>新约-马太福音 18章18节-24节</strong><br>
 <strong>20节</strong>：因为无论在那里，有两三个人奉我(<strong>耶稣</strong>)的名聚会，那里就有我在他(<strong>你</strong>)们中间”。<br>
 哈利路亚，阿们！</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[新约-罗马书]]></title>
-        <id>https://aifaith.github.io/Jesus/post/新约-罗马书/</id>
-        <link href="https://aifaith.github.io/Jesus/post/新约-罗马书/">
-        </link>
-        <updated>2020-03-06T07:25:41.000Z</updated>
-        <content type="html"><![CDATA[<p>弟兄姊妹主里平安好，今日分享圣经<br>
-<strong>新约-罗马书  8章35节-39节和合本</strong><br>
-谁能使我们与基督的爱隔绝呢？难道是患难吗？是困苦吗？是逼迫吗？是饥饿吗？是赤身露体吗？是危险吗？是刀剑吗？ 如经上所记：“我们为你的缘故终日被杀，人看我们如将宰的羊。” 然而，靠着爱我们的主，在这一切的事上已经得胜有余了。 因为我深信无论是死，是生，是天使，是掌权的，是有能的，是现在的事，是将来的事， 是高处的，是低处的，是别的受造之物，都不能叫我们与　神的爱隔绝；这爱是在我们的主基督耶稣里的。<br>
-哈利路亚，阿们!</p>
 ]]></content>
     </entry>
 </feed>
