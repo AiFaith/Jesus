@@ -1963,10 +1963,10 @@ blockquote:before {
   font-weight: bold;
 }
 body {
-      background-color: #eee;
+      background-color: #d0ebff;
     }
     .nav-toggle .line {
-      background-color: #eee !important;
+      background-color: #d0ebff !important;
     }.header {
         width: 960px;
         margin: 0 auto;
@@ -2073,13 +2073,13 @@ body {
       background-color: #e7f5fffe;
     }
       .site-meta {
-        background: #d0ebff !important;
+        background: #a5d8ff !important;
       }
       .head-top-line {
-        background: #d0ebff !important;
+        background: #a5d8ff !important;
       }
     .brand {
-      background: #fffffffe;
+      background: ffffff;
     }
     .main-title {
       color: #555;
