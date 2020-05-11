@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://aifaith.github.io/Jesus</id>
     <title>圣经阅读</title>
-    <updated>2020-05-11T13:16:10.191Z</updated>
+    <updated>2020-05-11T13:34:56.700Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://aifaith.github.io/Jesus"/>
     <link rel="self" href="https://aifaith.github.io/Jesus/atom.xml"/>
@@ -55,12 +55,12 @@
 <p>歌曲</p>
 <!-- more -->
 <audio id="audio" controls="" preload="none">
-      <source id="mp3" src="https://sohu.gg/a2P3m1F">
+      <source id="mp3" src="https://sohu.gg/iYc4kl3">
   </audio>
 <p>讲解</p>
   <!-- more -->
 <audio id="audio" controls="" preload="none">
-      <source id="mp3" src="https://sohu.gg/uFA73Jj">
+      <source id="mp3" src="https://sohu.gg/VgbPRwM">
   </audio>
 <br>
 哈利路亚，阿们!]]></content>
