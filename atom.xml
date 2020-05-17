@@ -2,11 +2,11 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://aifaith.github.io/Jesus</id>
     <title>圣经阅读</title>
-    <updated>2020-05-17T13:59:57.375Z</updated>
+    <updated>2020-05-17T14:04:59.759Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://aifaith.github.io/Jesus"/>
     <link rel="self" href="https://aifaith.github.io/Jesus/atom.xml"/>
-    <subtitle>关于弟兄姊妹圣经章节分享-集锦</subtitle>
+    <subtitle>关于弟兄姊妹圣经章节分享</subtitle>
     <logo>https://aifaith.github.io/Jesus/images/avatar.png</logo>
     <icon>https://aifaith.github.io/Jesus/favicon.ico</icon>
     <rights>All rights reserved 2020, 圣经阅读</rights>
