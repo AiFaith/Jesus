@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html>
   <head>
-      <meta charset="UTF-8"/>
+    <meta charset="UTF-8"/>
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
 <meta name="keywords" content="Gridea静态个人博客">
 <meta name="description" content="关于弟兄姊妹圣经章节分享">
 <meta name="theme-color" content="#a5d8ff">
-<title>圣经阅读</title>
+<title>新约-马太福音  旧约-耶利米书（两种果树） | 圣经阅读</title>
 <link rel="shortcut icon" href="/favicon.ico?v=1589908607434">
 <link rel="stylesheet" href="/styles/main.css">
 <link rel="stylesheet" href="/media/css/pisces.css">
@@ -27,6 +27,8 @@
 
 
 
+    <meta name="description" content="新约-马太福音  旧约-耶利米书（两种果树）" />
+    <meta name="keywords" content="旧约-耶利米书,新约-马太福音" />
   </head>
   <body>
     <div class="head-top-line"></div>
@@ -132,10 +134,25 @@
     </div>
     <div class="main-continer">
       
-      <div class="section-layout  pisces">
+      <div class="section-layout pisces ">
         <div class="section-layout-wrapper">
-          <div id="sidebarMeta" class="sidebar">
-    
+          
+
+<div class="sidebar">
+  
+    <div class="sidebar-box box-shadow-wrapper bg-color right-motion" id="sidebar">
+      
+        <div class="post-list-sidebar">
+          <div class="sidebar-title">
+            <span id="tocSideBar" class="sidebar-title-item sidebar-title-active">文章目录</span>
+            <span id="metaSideBar" class="sidebar-title-item">站点概览</span>
+          </div>
+        </div>
+      
+      <div class="sidebar-body pisces" id="sidebar_body">
+        
+          
+            
 <div class="sidebar-wrapper box-shadow-wrapper bg-color">
   <div class="sidebar-item">
     <img class="site-author-image right-motion" src="/images/avatar.png"/>
@@ -179,294 +196,207 @@
 
 
 </div>
+          
+        
+      </div>
+    </div>
+  
 </div>
 <script>
-  let sidebarMeta = document.querySelector('#sidebarMeta');
-  let scheme = 'pisces';
-  let sidebarWrapper = document.querySelector('.sidebar-wrapper');
-  if (sidebarMeta && (scheme === 'pisces' || scheme === 'gemini')) {
-    document.addEventListener('scroll', function(e) {
-      if (document.scrollingElement.scrollTop > parseInt(sidebarMeta.style.marginTop) + 10) {
-        sidebarWrapper.classList.add('home-sidebar-fixed')
-      } else {
-        sidebarWrapper.classList.remove('home-sidebar-fixed')
+  const SIDEBAR_TITLE_ACTIVE = 'sidebar-title-active';
+  const SIDEBAR_BODY_ACTIVE = 'sidebar-body-active';
+  const SLIDE_UP_IN = 'slide-up-in';
+
+  let sidebar = document.querySelector('#sidebar'),
+  tocSideBar = document.querySelector('#tocSideBar'),
+  metaSideBar = document.querySelector('#metaSideBar'),
+  postToc = document.querySelector('#post_toc'),
+  postSiteMeta = document.querySelector('#post_side_meta'),
+  sidebarTitle = document.querySelector('.sidebar-title'),
+  sidebarBody = document.querySelector('#sidebar_body');
+
+  tocSideBar && tocSideBar.addEventListener('click', (e) => {
+    toggleSidebar(e);
+  });
+
+  metaSideBar && metaSideBar.addEventListener('click', (e) => {
+    toggleSidebar(e);
+  });
+
+  function toggleSidebar(e) {
+    let currentTitle = document.querySelector("."+SIDEBAR_TITLE_ACTIVE);
+    if (currentTitle == e.srcElement) {
+      return ;
+    }
+    let current, showElement, hideElement;
+    if (e.srcElement == metaSideBar) {
+      showElement = postSiteMeta;
+      hideElement = postToc;
+    } else if (e.srcElement == tocSideBar){
+      showElement = postToc;
+      hideElement = postSiteMeta;
+    }
+    currentTitle.classList.remove(SIDEBAR_TITLE_ACTIVE);
+    e.srcElement.classList.add(SIDEBAR_TITLE_ACTIVE);
+
+    window.Velocity(hideElement, 'stop');
+    window.Velocity(hideElement, 'transition.slideUpOut', {
+      display: 'none',
+      duration: 200,
+      complete: function () {
+        window.Velocity(showElement, 'transition.slideDownIn', {
+          duration: 200
+        });
       }
-    });
+    })
+    hideElement.classList.remove(SIDEBAR_BODY_ACTIVE);
+    showElement.classList.add(SIDEBAR_BODY_ACTIVE);
   }
-  </script>
-            <div class="section-box tag-line">
-              <div class="box-shadow-wrapper">
-                <div class="bg-color">
-                  <section class="section posts-expand">
-                    <div class="padding-wrapper">
-  <div class="tag-timeline-box">
-    <div class="tag-timeline-wrapper">
-      <div class="tag-timeline-title">
-        <h2>
-          新约-使徒行传
-          <small>标签</small>
-        </h2>
-      </div>
-      
+
+  postToc && postToc.addEventListener('transitionend', function() {
+    this.classList.remove(SLIDE_UP_IN);
+  });
+
+  if (sidebarBody) {
+    if (sidebarBody.classList.contains('pisces') || sidebarBody.classList.contains('gemini')) {
+      let hasFix = false;
+      let scrollEl = document.querySelector('.main-continer');
+      let limitTop = document.querySelector('#nav_ul').children.length * 42 + 162;
+      window.addEventListener('scroll', function(e) {
+        if (document.scrollingElement.scrollTop >= limitTop) {
+          if (!hasFix) {
+            sidebar.classList.add('sidebar-fixed');
+            hasFix = true;
+          }
+        } else {
+          if (hasFix) {
+            sidebar.classList.remove('sidebar-fixed');
+            hasFix = false;
+          }
+        }
+      });
+    }
+  }
+  
+</script>
+          <div class="section-box box-shadow-wrapper">
+            <div class="section bg-color post post-page">
+              <header class="post-header">
+  <h1 class="post-title">
+    <a class="post-title-link" href="https://aifaith.github.io/Jesus/post/新约-马太福音  旧约-耶利米书（两种果树）/">
+      新约-马太福音  旧约-耶利米书（两种果树）
+    </a>
+  </h1>
+  <div class="post-meta">
+    
+    <span class="meta-item pc-show">
+      <i class="fa fa-calendar-o"></i>
+      <span>发布于</span>
+      <span>2020-05-19</span>
+      <span class="post-meta-divider pc-show">|</span>
+    </span>
+    
+      <span class="meta-item">
+        <i class="fa fa-folder-o"></i>
+        <span class="pc-show">分类于</span>
         
+          
+            <a href="https://aifaith.github.io/Jesus/6Lc0qydhp9/">
+              <span>旧约-耶利米书</span>
+            </a>、
           
         
           
-        
-      
-        
-          
-            <a href="https://aifaith.github.io/Jesus/post/新约-约翰福音  旧约-以赛亚书  新约-使徒行传（为耶稣作证）/">
-              <div class="motion-warpper">
-                <div class="tag-post-node">
-                  <h1>
-                    05-17
-                    <small>新约-约翰福音  旧约-以赛亚书  新约-使徒行传（为耶稣作证）</small>
-                  </h1>
-                </div>  
-              </div>
+            <a href="https://aifaith.github.io/Jesus/jtcrgQ64E/">
+              <span>新约-马太福音</span>
             </a>
           
         
-          
-        
-          
-        
-      
-        
-          
-        
-      
-        
-          
-        
-          
-        
-          
-        
-      
-        
-          
-        
-      
-        
-          
-        
-          
-        
-      
-        
-          
-        
-      
-        
-          
-        
-      
-        
-          
-        
-      
-        
-          
-        
-          
-        
-      
-        
-          
-        
-      
-        
-          
-        
-          
-        
-      
-        
-          
-        
-          
-        
-      
-        
-          
-        
-          
-        
-          
-        
-      
-        
-          
-        
-      
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-      
-        
-          
-        
-      
-        
-          
-        
-          
-        
-      
-        
-          
-        
-          
-        
-      
-        
-          
-        
-          
-        
-          
-        
-      
-        
-          
-        
-          
-        
-      
-        
-          
-        
-          
-        
-          
-        
-      
-        
-          
-        
-          
-        
-      
-        
-          
-        
-          
-        
-          
-        
-      
-        
-          
-        
-      
-        
-          
-        
-          
-        
-      
-        
-          
-        
-      
-        
-          
-        
-      
-        
-          
-        
-          
-        
-          
-        
-      
-        
-          
-        
-          
-        
-          
-        
-      
-        
-          
-        
-          
-        
-      
-        
-          
-        
-          
-            <a href="https://aifaith.github.io/Jesus/post/旧约-创世记  新约-使徒行传  新约-马太福音/">
-              <div class="motion-warpper">
-                <div class="tag-post-node">
-                  <h1>
-                    01-01
-                    <small>旧约-创世记  新约-使徒行传  新约-马太福音</small>
-                  </h1>
-                </div>  
+      </span>
+      <span class="post-meta-divider">|</span>
+    
+    <span class="meta-item">
+      <i class="fa fa-clock-o"></i>
+      <span>2分钟</span>
+    </span>
+    <span class="meta-item">
+      <span class="post-meta-divider">|</span>
+      <i class="fa fa-file-word-o"></i>
+      <span>365<span class="pc-show">字数</span></span>
+    </span>
+    
+  </div>
+</header>
+              <div class="post-body next-md-body" id="post_body">
+                <p>弟兄姊妹主里平安好，今日分享圣经<br>
+<strong>新约-马太福音  7章15节-29节</strong><br>
+<strong>15节</strong>：“你们要防备假先知，他们到你们这里来，外面披着羊皮，里面却是残暴的狼。</p>
+<p><strong>旧约-耶利米书  23章16节-17节</strong><br>
+<strong>16节</strong>：万军之耶和华如此说:“这些先知向你们说预言，你们不要听他们的话。他们以虚空教训你们，所说的异象，是出于自己的心，不是出于耶和华的口。</p>
+<p><strong>新约-马太福音  7章15节-29节</strong><br>
+<strong>19节</strong>：凡不结好果子的树，就砍下来丢在火里。<br>
+<strong>20节</strong>：所以，凭着他们的果子，就可以认出他们来。”<br>
+<strong>21节</strong>：“凡称呼我‘主啊，主啊’的人，不能都进天国；惟独遵行我天父旨意的人，才能进去。<br>
+<strong>24节</strong>：“所以，凡听见我话去行的，好比一个聪明人，把房子盖在磐石上。<br>
+<strong>26节</strong>：凡听见我这话不去行的，好比一个无知的人，把房子盖在沙土上。<br>
+<strong>27节</strong>：雨淋，水冲，风吹，撞着那房子，房子就倒塌了，并且倒塌得很大。”<br>
+<strong>28节</strong>：耶稣讲完了这些话，众人都希奇他的教训，<br>
+<strong>29节</strong>：因为他教训他们，正像有权柄的人，不像他们的文士。</p>
+<p><strong>诗歌：《诗歌选本》第三百一十九首（一）</strong><br>
+诗歌-歌谱<br>
+<img src="https://aifaith.github.io/Jesus/post-images/1589907606522.jpg" alt="" loading="lazy"></p>
+<p>诗歌-歌曲</p>
+<!-- more -->
+<audio id="audio" controls="" preload="none">
+      <source id="mp3" src="https://sohu.gg/jSrxA8pbtbWm">
+  </audio>
+<p>圣经-讲解</p>
+  <!-- more -->
+<audio id="audio" controls="" preload="none">
+      <source id="mp3" src="https://sohu.gg/IUkXaGuwqebu">
+  </audio>
+<br>
+哈利路亚，阿们!
               </div>
-            </a>
-          
-        
-          
-        
+              <div class="post-footer">
+  <ul class="post-copyright">
+    <li class="post-copyright-author">
+      <strong>本文作者：</strong>
+      圣经阅读
+    </li>
+    <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="https://aifaith.github.io/Jesus/post/新约-马太福音  旧约-耶利米书（两种果树）/" title="新约-马太福音  旧约-耶利米书（两种果树）">新约-马太福音  旧约-耶利米书（两种果树）</a>
+    </li>
+    <li class="post-copyright-license">
+      <strong>版权声明： </strong>
+      本博客所有文章除特别声明外，转载请注明出处！
+    </li>
+  </ul>
+  <div class="tags">
+    
+      <a href="https://aifaith.github.io/Jesus/6Lc0qydhp9/"># 旧约-耶利米书</a>
+    
+      <a href="https://aifaith.github.io/Jesus/jtcrgQ64E/"># 新约-马太福音</a>
+    
+  </div>
+  <div class="nav">
+    <div class="nav-prev">
       
-        
-          
-        
-          
-        
-          
-            <a href="https://aifaith.github.io/Jesus/post/新约-彼得后书  新约-使徒行传  旧约-利未记  新约-启示录/">
-              <div class="motion-warpper">
-                <div class="tag-post-node">
-                  <h1>
-                    11-18
-                    <small>新约-彼得后书  新约-使徒行传  旧约-利未记  新约-启示录</small>
-                  </h1>
-                </div>  
-              </div>
-            </a>
-          
-        
-          
-        
+    </div>
+    <div class="nav-next">
       
-        
-          
-        
-          
-        
-          
-        
-      
-        
-          
-        
-      
-        
-      
-        
+        <a class="nav-pc-next" title="新约-约翰福音  旧约-以赛亚书  新约-使徒行传（为耶稣作证）" href="https://aifaith.github.io/Jesus/post/新约-约翰福音  旧约-以赛亚书  新约-使徒行传（为耶稣作证）/">新约-约翰福音  旧约-以赛亚书  新约-使徒行传（为耶稣作证）</a>
+        <a class="nav-mobile-next" title="新约-约翰福音  旧约-以赛亚书  新约-使徒行传（为耶稣作证）" href="https://aifaith.github.io/Jesus/post/新约-约翰福音  旧约-以赛亚书  新约-使徒行传（为耶稣作证）/">下一篇</a>
+        <i class="fa fa-chevron-right"></i>
       
     </div>
   </div>
 </div>
-                  </section>
-                </div>
-              </div>
+              
+  
+
+            </div>
           </div>
         </div>
       </div>
