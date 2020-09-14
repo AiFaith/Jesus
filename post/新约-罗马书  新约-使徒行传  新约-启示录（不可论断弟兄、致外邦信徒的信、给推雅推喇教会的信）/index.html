@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html>
   <head>
-      <meta charset="UTF-8"/>
+    <meta charset="UTF-8"/>
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
 <meta name="keywords" content="Gridea静态个人博客">
 <meta name="description" content="关于弟兄姊妹圣经章节分享">
 <meta name="theme-color" content="#a5d8ff">
-<title>圣经阅读</title>
+<title>新约-罗马书  新约-使徒行传  新约-启示录（不可论断弟兄、致外邦信徒的信、给推雅推喇教会的信） | 圣经阅读</title>
 <link rel="shortcut icon" href="/favicon.ico?v=1600094892271">
 <link rel="stylesheet" href="/styles/main.css">
 <link rel="stylesheet" href="/media/css/pisces.css">
@@ -27,6 +27,8 @@
 
 
 
+    <meta name="description" content="新约-罗马书  新约-使徒行传  新约-启示录（不可论断弟兄、致外邦信徒的信、给推雅推喇教会的信）" />
+    <meta name="keywords" content="新约-使徒行传,新约-启示录,新约-罗马书" />
   </head>
   <body>
     <div class="head-top-line"></div>
@@ -132,10 +134,25 @@
     </div>
     <div class="main-continer">
       
-      <div class="section-layout  pisces">
+      <div class="section-layout pisces ">
         <div class="section-layout-wrapper">
-          <div id="sidebarMeta" class="sidebar">
-    
+          
+
+<div class="sidebar">
+  
+    <div class="sidebar-box box-shadow-wrapper bg-color right-motion" id="sidebar">
+      
+        <div class="post-list-sidebar">
+          <div class="sidebar-title">
+            <span id="tocSideBar" class="sidebar-title-item sidebar-title-active">文章目录</span>
+            <span id="metaSideBar" class="sidebar-title-item">站点概览</span>
+          </div>
+        </div>
+      
+      <div class="sidebar-body pisces" id="sidebar_body">
+        
+          
+            
 <div class="sidebar-wrapper box-shadow-wrapper bg-color">
   <div class="sidebar-item">
     <img class="site-author-image right-motion" src="/images/avatar.png"/>
@@ -179,482 +196,213 @@
 
 
 </div>
+          
+        
+      </div>
+    </div>
+  
 </div>
 <script>
-  let sidebarMeta = document.querySelector('#sidebarMeta');
-  let scheme = 'pisces';
-  let sidebarWrapper = document.querySelector('.sidebar-wrapper');
-  if (sidebarMeta && (scheme === 'pisces' || scheme === 'gemini')) {
-    document.addEventListener('scroll', function(e) {
-      if (document.scrollingElement.scrollTop > parseInt(sidebarMeta.style.marginTop) + 10) {
-        sidebarWrapper.classList.add('home-sidebar-fixed')
-      } else {
-        sidebarWrapper.classList.remove('home-sidebar-fixed')
+  const SIDEBAR_TITLE_ACTIVE = 'sidebar-title-active';
+  const SIDEBAR_BODY_ACTIVE = 'sidebar-body-active';
+  const SLIDE_UP_IN = 'slide-up-in';
+
+  let sidebar = document.querySelector('#sidebar'),
+  tocSideBar = document.querySelector('#tocSideBar'),
+  metaSideBar = document.querySelector('#metaSideBar'),
+  postToc = document.querySelector('#post_toc'),
+  postSiteMeta = document.querySelector('#post_side_meta'),
+  sidebarTitle = document.querySelector('.sidebar-title'),
+  sidebarBody = document.querySelector('#sidebar_body');
+
+  tocSideBar && tocSideBar.addEventListener('click', (e) => {
+    toggleSidebar(e);
+  });
+
+  metaSideBar && metaSideBar.addEventListener('click', (e) => {
+    toggleSidebar(e);
+  });
+
+  function toggleSidebar(e) {
+    let currentTitle = document.querySelector("."+SIDEBAR_TITLE_ACTIVE);
+    if (currentTitle == e.srcElement) {
+      return ;
+    }
+    let current, showElement, hideElement;
+    if (e.srcElement == metaSideBar) {
+      showElement = postSiteMeta;
+      hideElement = postToc;
+    } else if (e.srcElement == tocSideBar){
+      showElement = postToc;
+      hideElement = postSiteMeta;
+    }
+    currentTitle.classList.remove(SIDEBAR_TITLE_ACTIVE);
+    e.srcElement.classList.add(SIDEBAR_TITLE_ACTIVE);
+
+    window.Velocity(hideElement, 'stop');
+    window.Velocity(hideElement, 'transition.slideUpOut', {
+      display: 'none',
+      duration: 200,
+      complete: function () {
+        window.Velocity(showElement, 'transition.slideDownIn', {
+          duration: 200
+        });
       }
-    });
+    })
+    hideElement.classList.remove(SIDEBAR_BODY_ACTIVE);
+    showElement.classList.add(SIDEBAR_BODY_ACTIVE);
   }
-  </script>
-            <div class="section-box tag-line">
-              <div class="box-shadow-wrapper">
-                <div class="bg-color">
-                  <section class="section posts-expand">
-                    <div class="padding-wrapper">
-  <div class="tag-timeline-box">
-    <div class="tag-timeline-wrapper">
-      <div class="tag-timeline-title">
-        <h2>
-          新约-彼得后书
-          <small>标签</small>
-        </h2>
-      </div>
-      
-        
-          
-        
-          
-        
-          
-        
-      
-        
-          
-        
-      
-        
-          
-        
-          
-        
-      
-        
-          
-        
-      
-        
-          
-        
-          
-        
-          
-        
-      
-        
-          
-        
-      
-        
-          
-        
-      
-        
-          
-        
-          
-        
-          
-        
-      
-        
-          
-        
-      
-        
-          
-        
-          
-        
-      
-        
-          
-        
-      
-        
-          
-        
-          
-        
-          
-        
-      
-        
-          
-        
-      
-        
-          
-        
-          
-        
-          
-        
-      
-        
-          
-        
-      
-        
-          
-        
-          
-        
-          
-        
-      
-        
-          
-        
-          
-        
-      
-        
-          
-        
-          
-        
-      
-        
-          
-        
-          
-        
-      
-        
-          
-        
-          
-        
-          
-        
-      
-        
-          
-        
-          
-        
-      
-        
-          
-        
-          
-        
-      
-        
-          
-        
-          
-        
-      
-        
-          
-        
-          
-        
-      
-        
-          
-        
-      
-        
-          
-        
-          
-        
-          
-        
-      
-        
-          
-        
-      
-        
-          
-        
-          
-        
-          
-        
-      
-        
-          
-        
-          
-        
-      
-        
-          
-        
-          
-        
-          
-        
-      
-        
-          
-        
-          
-        
-          
-        
-      
-        
-          
-        
-          
-        
-          
-        
-      
-        
-          
-        
-          
-        
-          
-        
-      
-        
-          
-        
-          
-        
-      
-        
-          
-        
-          
-        
-      
-        
-          
-        
-          
-        
-          
-        
-      
-        
-          
-        
-      
-        
-          
-        
-          
-        
-          
-        
-      
-        
-          
-        
-      
-        
-          
-        
-          
-        
-      
-        
-          
-        
-      
-        
-          
-        
-      
-        
-          
-        
-      
-        
-          
-        
-          
-        
-      
-        
-          
-        
-      
-        
-          
-        
-          
-        
-      
-        
-          
-        
-          
-        
-      
-        
-          
-        
-          
-        
-          
-        
-      
-        
-          
-        
-      
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-      
-        
-          
-        
-      
-        
-          
-        
-          
-        
-      
-        
-          
-        
-          
-        
-      
-        
-          
-        
-          
-        
-          
-        
-      
-        
-          
-        
-          
-        
-      
-        
-          
-        
-          
-        
-          
-        
-      
-        
-          
-        
-          
-        
-      
-        
-          
-        
-          
-        
-          
-        
-      
-        
-          
-        
-      
-        
-          
-        
-          
-        
-      
-        
-          
-        
-      
-        
-          
-        
-      
-        
-          
-        
-          
-        
-          
-        
-      
-        
-          
-        
-          
-        
-          
-        
-      
-        
-          
-        
-          
-        
-      
-        
-          
-        
-          
-        
-          
-        
-      
-        
-          
-            <a href="https://aifaith.github.io/Jesus/post/新约-彼得后书  新约-使徒行传  旧约-利未记  新约-启示录/">
-              <div class="motion-warpper">
-                <div class="tag-post-node">
-                  <h1>
-                    11-18
-                    <small>新约-彼得后书  新约-使徒行传  旧约-利未记  新约-启示录</small>
-                  </h1>
-                </div>  
-              </div>
+
+  postToc && postToc.addEventListener('transitionend', function() {
+    this.classList.remove(SLIDE_UP_IN);
+  });
+
+  if (sidebarBody) {
+    if (sidebarBody.classList.contains('pisces') || sidebarBody.classList.contains('gemini')) {
+      let hasFix = false;
+      let scrollEl = document.querySelector('.main-continer');
+      let limitTop = document.querySelector('#nav_ul').children.length * 42 + 162;
+      window.addEventListener('scroll', function(e) {
+        if (document.scrollingElement.scrollTop >= limitTop) {
+          if (!hasFix) {
+            sidebar.classList.add('sidebar-fixed');
+            hasFix = true;
+          }
+        } else {
+          if (hasFix) {
+            sidebar.classList.remove('sidebar-fixed');
+            hasFix = false;
+          }
+        }
+      });
+    }
+  }
+  
+</script>
+          <div class="section-box box-shadow-wrapper">
+            <div class="section bg-color post post-page">
+              <header class="post-header">
+  <h1 class="post-title">
+    <a class="post-title-link" href="https://aifaith.github.io/Jesus/post/新约-罗马书  新约-使徒行传  新约-启示录（不可论断弟兄、致外邦信徒的信、给推雅推喇教会的信）/">
+      新约-罗马书  新约-使徒行传  新约-启示录（不可论断弟兄、致外邦信徒的信、给推雅推喇教会的信）
+    </a>
+  </h1>
+  <div class="post-meta">
+    
+    <span class="meta-item pc-show">
+      <i class="fa fa-calendar-o"></i>
+      <span>发布于</span>
+      <span>2020-09-13</span>
+      <span class="post-meta-divider pc-show">|</span>
+    </span>
+    
+      <span class="meta-item">
+        <i class="fa fa-folder-o"></i>
+        <span class="pc-show">分类于</span>
+        
+          
+            <a href="https://aifaith.github.io/Jesus/Fh4VnX-QyK/">
+              <span>新约-使徒行传</span>
+            </a>、
+          
+        
+          
+            <a href="https://aifaith.github.io/Jesus/vyaOFEnfP/">
+              <span>新约-启示录</span>
+            </a>、
+          
+        
+          
+            <a href="https://aifaith.github.io/Jesus/zPz4nKyxo/">
+              <span>新约-罗马书</span>
             </a>
           
         
-          
-        
-          
-        
-          
-        
+      </span>
+      <span class="post-meta-divider">|</span>
+    
+    <span class="meta-item">
+      <i class="fa fa-clock-o"></i>
+      <span>2分钟</span>
+    </span>
+    <span class="meta-item">
+      <span class="post-meta-divider">|</span>
+      <i class="fa fa-file-word-o"></i>
+      <span>309<span class="pc-show">字数</span></span>
+    </span>
+    
+  </div>
+</header>
+              <div class="post-body next-md-body" id="post_body">
+                <p>弟兄姊妹主里平安好，主日分享圣经<br>
+<strong>新约-罗马书  14章1节-12节</strong><br>
+<strong>1节</strong>：信心软弱的，你们要接纳，但不要辩论所疑惑的事。<br>
+<strong>6节</strong>：守日的人是为主守的；吃的人是为主吃的，因他感谢  神；不吃的人是为主不吃的，也感谢  神。<br>
+<strong>12节</strong>：这样看来，我们各人必要将自己的事在  神面前说明。</p>
+<p><strong>新约-使徒行传  15章22节-29节</strong><br>
+<strong>28节</strong>：因为圣灵和我们定意不将别的重担放在你们身上，惟有几件事是不可少的，<br>
+<strong>29节</strong>：就是禁戒**(1)祭偶像的物<strong>和</strong>(2)血**，并**(3)勒死的牲畜<strong>和</strong>(4)奸淫**。这几件你们若能自己禁戒不犯就好了。愿你们平安！”</p>
+<p><strong>新约-启示录  2章18节-29节</strong><br>
+<strong>20节</strong>：然而，有一件事我要责备你，就是你容让那自称是先知的妇人耶洗别教导我的仆人，引诱他们行奸淫，吃祭偶像之物。<br>
+<strong>29节</strong>：圣灵向众教会所说的话，凡有耳的，就应当听。”</p>
+<p><strong>诗歌：《诗歌选本》第一百四十七首</strong><br>
+诗歌-歌谱<br>
+<img src="https://aifaith-1257459923.cos.ap-guangzhou.myqcloud.com/20200913-%E6%96%B0%E7%BA%A6-%E7%BD%97%E9%A9%AC%E4%B9%A6%20%20%E6%96%B0%E7%BA%A6-%E4%BD%BF%E5%BE%92%E8%A1%8C%E4%BC%A0%20%20%E6%96%B0%E7%BA%A6-%E5%90%AF%E7%A4%BA%E5%BD%95%EF%BC%88%E4%B8%8D%E5%8F%AF%E8%AE%BA%E6%96%AD%E5%BC%9F%E5%85%84%E3%80%81%E8%87%B4%E5%A4%96%E9%82%A6%E4%BF%A1%E5%BE%92%E7%9A%84%E4%BF%A1%E3%80%81%E7%BB%99%E6%8E%A8%E9%9B%85%E6%8E%A8%E5%96%87%E6%95%99%E4%BC%9A%E7%9A%84%E4%BF%A1%EF%BC%89/%E7%AC%AC%E4%B8%80%E7%99%BE%E5%9B%9B%E5%8D%81%E4%B8%83%E9%A6%96%20-%E4%B8%BB%E8%80%B6%E7%A8%A3%E6%88%91%E7%9C%9F%E7%BE%A1%E6%85%95.jpg" alt="" loading="lazy"></p>
+<p>诗歌-歌曲</p>
+<!-- more -->
+<audio id="audio" controls="" preload="none">
+      <source id="mp3" src="https://aifaith-1257459923.cos.ap-guangzhou.myqcloud.com/20200913-%E6%96%B0%E7%BA%A6-%E7%BD%97%E9%A9%AC%E4%B9%A6%20%20%E6%96%B0%E7%BA%A6-%E4%BD%BF%E5%BE%92%E8%A1%8C%E4%BC%A0%20%20%E6%96%B0%E7%BA%A6-%E5%90%AF%E7%A4%BA%E5%BD%95%EF%BC%88%E4%B8%8D%E5%8F%AF%E8%AE%BA%E6%96%AD%E5%BC%9F%E5%85%84%E3%80%81%E8%87%B4%E5%A4%96%E9%82%A6%E4%BF%A1%E5%BE%92%E7%9A%84%E4%BF%A1%E3%80%81%E7%BB%99%E6%8E%A8%E9%9B%85%E6%8E%A8%E5%96%87%E6%95%99%E4%BC%9A%E7%9A%84%E4%BF%A1%EF%BC%89/%E7%AC%AC%E4%B8%80%E7%99%BE%E5%9B%9B%E5%8D%81%E4%B8%83%E9%A6%96%20-%E4%B8%BB%E8%80%B6%E7%A8%A3%E6%88%91%E7%9C%9F%E7%BE%A1%E6%85%95.mp3">
+  </audio>
+<p>圣经-讲解</p>
+  <!-- more -->
+<audio id="audio" controls="" preload="none">
+      <source id="mp3" src="https://sohu.gg/VgbPRwM">
+  </audio>
+<br>
+哈利路亚，阿们!
+
+              </div>
+              <div class="post-footer">
+  <ul class="post-copyright">
+    <li class="post-copyright-author">
+      <strong>本文作者：</strong>
+      圣经阅读
+    </li>
+    <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="https://aifaith.github.io/Jesus/post/新约-罗马书  新约-使徒行传  新约-启示录（不可论断弟兄、致外邦信徒的信、给推雅推喇教会的信）/" title="新约-罗马书  新约-使徒行传  新约-启示录（不可论断弟兄、致外邦信徒的信、给推雅推喇教会的信）">新约-罗马书  新约-使徒行传  新约-启示录（不可论断弟兄、致外邦信徒的信、给推雅推喇教会的信）</a>
+    </li>
+    <li class="post-copyright-license">
+      <strong>版权声明： </strong>
+      本博客所有文章除特别声明外，转载请注明出处！
+    </li>
+  </ul>
+  <div class="tags">
+    
+      <a href="https://aifaith.github.io/Jesus/Fh4VnX-QyK/"># 新约-使徒行传</a>
+    
+      <a href="https://aifaith.github.io/Jesus/vyaOFEnfP/"># 新约-启示录</a>
+    
+      <a href="https://aifaith.github.io/Jesus/zPz4nKyxo/"># 新约-罗马书</a>
+    
+  </div>
+  <div class="nav">
+    <div class="nav-prev">
       
-        
-          
-        
-          
-        
-          
-        
+    </div>
+    <div class="nav-next">
       
-        
-          
-        
-      
-        
-      
-        
+        <a class="nav-pc-next" title="新约-马太福音（耶稣关于离婚的教导、耶稣为小孩祝福）" href="https://aifaith.github.io/Jesus/post/新约-马太福音（耶稣关于离婚的教导、耶稣为小孩祝福）/">新约-马太福音（耶稣关于离婚的教导、耶稣为小孩祝福）</a>
+        <a class="nav-mobile-next" title="新约-马太福音（耶稣关于离婚的教导、耶稣为小孩祝福）" href="https://aifaith.github.io/Jesus/post/新约-马太福音（耶稣关于离婚的教导、耶稣为小孩祝福）/">下一篇</a>
+        <i class="fa fa-chevron-right"></i>
       
     </div>
   </div>
 </div>
-                  </section>
-                </div>
-              </div>
+              
+  
+
+            </div>
           </div>
         </div>
       </div>
