@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html>
   <head>
-      <meta charset="UTF-8"/>
+    <meta charset="UTF-8"/>
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
 <meta name="keywords" content="Gridea静态个人博客">
 <meta name="description" content="关于弟兄姊妹圣经章节分享">
 <meta name="theme-color" content="#a5d8ff">
-<title>圣经阅读</title>
+<title>新约-马太福音（在葡萄园做工的比喻、耶稣第三次预言受难和复活、治好两个盲人） | 圣经阅读</title>
 <link rel="shortcut icon" href="/favicon.ico?v=1600359116916">
 <link rel="stylesheet" href="/styles/main.css">
 <link rel="stylesheet" href="/media/css/pisces.css">
@@ -27,6 +27,8 @@
 
 
 
+    <meta name="description" content="新约-马太福音（在葡萄园做工的比喻、耶稣第三次预言受难和复活、治好两个盲人）" />
+    <meta name="keywords" content="新约-马太福音" />
   </head>
   <body>
     <div class="head-top-line"></div>
@@ -132,10 +134,25 @@
     </div>
     <div class="main-continer">
       
-      <div class="section-layout  pisces">
+      <div class="section-layout pisces ">
         <div class="section-layout-wrapper">
-          <div id="sidebarMeta" class="sidebar">
-    
+          
+
+<div class="sidebar">
+  
+    <div class="sidebar-box box-shadow-wrapper bg-color right-motion" id="sidebar">
+      
+        <div class="post-list-sidebar">
+          <div class="sidebar-title">
+            <span id="tocSideBar" class="sidebar-title-item sidebar-title-active">文章目录</span>
+            <span id="metaSideBar" class="sidebar-title-item">站点概览</span>
+          </div>
+        </div>
+      
+      <div class="sidebar-body pisces" id="sidebar_body">
+        
+          
+            
 <div class="sidebar-wrapper box-shadow-wrapper bg-color">
   <div class="sidebar-item">
     <img class="site-author-image right-motion" src="/images/avatar.png"/>
@@ -179,497 +196,194 @@
 
 
 </div>
+          
+        
+      </div>
+    </div>
+  
 </div>
 <script>
-  let sidebarMeta = document.querySelector('#sidebarMeta');
-  let scheme = 'pisces';
-  let sidebarWrapper = document.querySelector('.sidebar-wrapper');
-  if (sidebarMeta && (scheme === 'pisces' || scheme === 'gemini')) {
-    document.addEventListener('scroll', function(e) {
-      if (document.scrollingElement.scrollTop > parseInt(sidebarMeta.style.marginTop) + 10) {
-        sidebarWrapper.classList.add('home-sidebar-fixed')
-      } else {
-        sidebarWrapper.classList.remove('home-sidebar-fixed')
+  const SIDEBAR_TITLE_ACTIVE = 'sidebar-title-active';
+  const SIDEBAR_BODY_ACTIVE = 'sidebar-body-active';
+  const SLIDE_UP_IN = 'slide-up-in';
+
+  let sidebar = document.querySelector('#sidebar'),
+  tocSideBar = document.querySelector('#tocSideBar'),
+  metaSideBar = document.querySelector('#metaSideBar'),
+  postToc = document.querySelector('#post_toc'),
+  postSiteMeta = document.querySelector('#post_side_meta'),
+  sidebarTitle = document.querySelector('.sidebar-title'),
+  sidebarBody = document.querySelector('#sidebar_body');
+
+  tocSideBar && tocSideBar.addEventListener('click', (e) => {
+    toggleSidebar(e);
+  });
+
+  metaSideBar && metaSideBar.addEventListener('click', (e) => {
+    toggleSidebar(e);
+  });
+
+  function toggleSidebar(e) {
+    let currentTitle = document.querySelector("."+SIDEBAR_TITLE_ACTIVE);
+    if (currentTitle == e.srcElement) {
+      return ;
+    }
+    let current, showElement, hideElement;
+    if (e.srcElement == metaSideBar) {
+      showElement = postSiteMeta;
+      hideElement = postToc;
+    } else if (e.srcElement == tocSideBar){
+      showElement = postToc;
+      hideElement = postSiteMeta;
+    }
+    currentTitle.classList.remove(SIDEBAR_TITLE_ACTIVE);
+    e.srcElement.classList.add(SIDEBAR_TITLE_ACTIVE);
+
+    window.Velocity(hideElement, 'stop');
+    window.Velocity(hideElement, 'transition.slideUpOut', {
+      display: 'none',
+      duration: 200,
+      complete: function () {
+        window.Velocity(showElement, 'transition.slideDownIn', {
+          duration: 200
+        });
       }
-    });
+    })
+    hideElement.classList.remove(SIDEBAR_BODY_ACTIVE);
+    showElement.classList.add(SIDEBAR_BODY_ACTIVE);
   }
-  </script>
-            <div class="section-box tag-line">
-              <div class="box-shadow-wrapper">
-                <div class="bg-color">
-                  <section class="section posts-expand">
-                    <div class="padding-wrapper">
-  <div class="tag-timeline-box">
-    <div class="tag-timeline-wrapper">
-      <div class="tag-timeline-title">
-        <h2>
-          新约-歌罗西书
-          <small>标签</small>
-        </h2>
-      </div>
-      
+
+  postToc && postToc.addEventListener('transitionend', function() {
+    this.classList.remove(SLIDE_UP_IN);
+  });
+
+  if (sidebarBody) {
+    if (sidebarBody.classList.contains('pisces') || sidebarBody.classList.contains('gemini')) {
+      let hasFix = false;
+      let scrollEl = document.querySelector('.main-continer');
+      let limitTop = document.querySelector('#nav_ul').children.length * 42 + 162;
+      window.addEventListener('scroll', function(e) {
+        if (document.scrollingElement.scrollTop >= limitTop) {
+          if (!hasFix) {
+            sidebar.classList.add('sidebar-fixed');
+            hasFix = true;
+          }
+        } else {
+          if (hasFix) {
+            sidebar.classList.remove('sidebar-fixed');
+            hasFix = false;
+          }
+        }
+      });
+    }
+  }
+  
+</script>
+          <div class="section-box box-shadow-wrapper">
+            <div class="section bg-color post post-page">
+              <header class="post-header">
+  <h1 class="post-title">
+    <a class="post-title-link" href="https://aifaith.github.io/Jesus/post/新约-马太福音（在葡萄园做工的比喻、耶稣第三次预言受难和复活、治好两个盲人）/">
+      新约-马太福音（在葡萄园做工的比喻、耶稣第三次预言受难和复活、治好两个盲人）
+    </a>
+  </h1>
+  <div class="post-meta">
+    
+    <span class="meta-item pc-show">
+      <i class="fa fa-calendar-o"></i>
+      <span>发布于</span>
+      <span>2020-09-16</span>
+      <span class="post-meta-divider pc-show">|</span>
+    </span>
+    
+      <span class="meta-item">
+        <i class="fa fa-folder-o"></i>
+        <span class="pc-show">分类于</span>
         
           
-        
-      
-        
-          
-        
-          
-        
-          
-        
-      
-        
-          
-        
-      
-        
-          
-        
-          
-        
-      
-        
-          
-        
-      
-        
-          
-        
-          
-        
-          
-        
-      
-        
-          
-        
-      
-        
-          
-        
-      
-        
-          
-        
-          
-        
-          
-        
-      
-        
-          
-        
-      
-        
-          
-        
-          
-        
-      
-        
-          
-        
-      
-        
-          
-        
-          
-        
-          
-        
-      
-        
-          
-        
-      
-        
-          
-        
-          
-        
-          
-        
-      
-        
-          
-        
-      
-        
-          
-        
-          
-        
-          
-        
-      
-        
-          
-        
-          
-        
-      
-        
-          
-        
-          
-        
-      
-        
-          
-        
-          
-        
-      
-        
-          
-            <a href="https://aifaith.github.io/Jesus/post/新约-罗马书  新约-马太福音  新约-歌罗西书（在罪上死，在基督里活、耶稣受洗、基督里生命的丰盛）/">
-              <div class="motion-warpper">
-                <div class="tag-post-node">
-                  <h1>
-                    07-12
-                    <small>新约-罗马书  新约-马太福音  新约-歌罗西书（在罪上死，在基督里活、耶稣受洗、基督里生命的丰盛）</small>
-                  </h1>
-                </div>  
-              </div>
+            <a href="https://aifaith.github.io/Jesus/jtcrgQ64E/">
+              <span>新约-马太福音</span>
             </a>
           
         
-          
-        
-          
-        
-      
-        
-          
-        
-          
-        
-      
-        
-          
-        
-          
-        
-      
-        
-          
-        
-          
-        
-      
-        
-          
-        
-          
-        
-      
-        
-          
-        
-      
-        
-          
-        
-          
-        
-          
-        
-      
-        
-          
-        
-      
-        
-          
-        
-          
-        
-          
-        
-      
-        
-          
-        
-          
-        
-      
-        
-          
-        
-          
-        
-          
-        
-      
-        
-          
-        
-          
-        
-          
-        
-      
-        
-          
-        
-          
-        
-          
-        
-      
-        
-          
-        
-          
-        
-          
-        
-      
-        
-          
-        
-          
-        
-      
-        
-          
-        
-          
-        
-      
-        
-          
-        
-          
-        
-          
-        
-      
-        
-          
-        
-      
-        
-          
-        
-          
-        
-          
-        
-      
-        
-          
-        
-      
-        
-          
-        
-          
-        
-      
-        
-          
-        
-      
-        
-          
-        
-      
-        
-          
-        
-      
-        
-          
-            <a href="https://aifaith.github.io/Jesus/post/新约-歌罗西书  新约-罗马书/">
-              <div class="motion-warpper">
-                <div class="tag-post-node">
-                  <h1>
-                    04-26
-                    <small>新约-歌罗西书  新约-罗马书</small>
-                  </h1>
-                </div>  
+      </span>
+      <span class="post-meta-divider">|</span>
+    
+    <span class="meta-item">
+      <i class="fa fa-clock-o"></i>
+      <span>1分钟</span>
+    </span>
+    <span class="meta-item">
+      <span class="post-meta-divider">|</span>
+      <i class="fa fa-file-word-o"></i>
+      <span>239<span class="pc-show">字数</span></span>
+    </span>
+    
+  </div>
+</header>
+              <div class="post-body next-md-body" id="post_body">
+                <p>弟兄姊妹主里平安好，今日分享圣经<br>
+<strong>新约-马太福音  20章1节-34节</strong><br>
+<strong>1节</strong>：“因为天国好像家主清早出去，雇人进他的葡萄园作工；<br>
+<strong>15节</strong>：我的东西难道不可随我的意思用吗？因为我作好人，你就红了眼吗？<br>
+<strong>16节</strong>：这样，那在后的将要在前；在前的将要在后了(<strong>有古卷在此有“因为被召的人多，选上的人少”</strong>)。”<br>
+<strong>27节</strong>：谁愿为首，就必作你们的仆人。<br>
+<strong>28节</strong>：正如人子来，不是要受人的服侍，乃是要服侍人，并且要舍命，作多人的赎价。”<br>
+<strong>33节</strong>：他们说:“主啊，要我们的眼睛能看见。”<br>
+<strong>34节</strong>：耶稣就动了慈心，把他们的眼睛一摸，他们立刻看见，就跟从了耶稣。</p>
+<p><strong>诗歌：《诗歌选本》第一百八十二首</strong><br>
+诗歌-歌谱<br>
+<img src="https://aifaith-1257459923.cos.ap-guangzhou.myqcloud.com/20200916-%E6%96%B0%E7%BA%A6-%E9%A9%AC%E5%A4%AA%E7%A6%8F%E9%9F%B3%EF%BC%88%E5%9C%A8%E8%91%A1%E8%90%84%E5%9B%AD%E5%81%9A%E5%B7%A5%E7%9A%84%E6%AF%94%E5%96%BB%E3%80%81%E8%80%B6%E7%A8%A3%E7%AC%AC%E4%B8%89%E6%AC%A1%E9%A2%84%E8%A8%80%E5%8F%97%E9%9A%BE%E5%92%8C%E5%A4%8D%E6%B4%BB%E3%80%81%E6%B2%BB%E5%A5%BD%E4%B8%A4%E4%B8%AA%E7%9B%B2%E4%BA%BA%EF%BC%89/%E7%AC%AC%E4%B8%80%E7%99%BE%E5%85%AB%E5%8D%81%E4%BA%8C%E9%A6%96%20-%E4%B8%8D%E6%98%AF%E6%8C%A3%E6%89%8E%E4%B9%83%E6%98%AF%E5%BD%92%E4%BE%9D.jpg" alt="" loading="lazy"></p>
+<p>诗歌-歌曲</p>
+<!-- more -->
+<audio id="audio" controls="" preload="none">
+      <source id="mp3" src="https://aifaith-1257459923.cos.ap-guangzhou.myqcloud.com/20200916-%E6%96%B0%E7%BA%A6-%E9%A9%AC%E5%A4%AA%E7%A6%8F%E9%9F%B3%EF%BC%88%E5%9C%A8%E8%91%A1%E8%90%84%E5%9B%AD%E5%81%9A%E5%B7%A5%E7%9A%84%E6%AF%94%E5%96%BB%E3%80%81%E8%80%B6%E7%A8%A3%E7%AC%AC%E4%B8%89%E6%AC%A1%E9%A2%84%E8%A8%80%E5%8F%97%E9%9A%BE%E5%92%8C%E5%A4%8D%E6%B4%BB%E3%80%81%E6%B2%BB%E5%A5%BD%E4%B8%A4%E4%B8%AA%E7%9B%B2%E4%BA%BA%EF%BC%89/%E7%AC%AC%E4%B8%80%E7%99%BE%E5%85%AB%E5%8D%81%E4%BA%8C%E9%A6%96%20-%E4%B8%8D%E6%98%AF%E6%8C%A3%E6%89%8E%E4%B9%83%E6%98%AF%E5%BD%92%E4%BE%9D.mp3">
+  </audio>
+<p>圣经-讲解</p>
+  <!-- more -->
+<audio id="audio" controls="" preload="none">
+      <source id="mp3" src="https://sohu.gg/VgbPRwM">
+  </audio>
+<br>
+哈利路亚，阿们!
               </div>
-            </a>
-          
-        
-          
-        
+              <div class="post-footer">
+  <ul class="post-copyright">
+    <li class="post-copyright-author">
+      <strong>本文作者：</strong>
+      圣经阅读
+    </li>
+    <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="https://aifaith.github.io/Jesus/post/新约-马太福音（在葡萄园做工的比喻、耶稣第三次预言受难和复活、治好两个盲人）/" title="新约-马太福音（在葡萄园做工的比喻、耶稣第三次预言受难和复活、治好两个盲人）">新约-马太福音（在葡萄园做工的比喻、耶稣第三次预言受难和复活、治好两个盲人）</a>
+    </li>
+    <li class="post-copyright-license">
+      <strong>版权声明： </strong>
+      本博客所有文章除特别声明外，转载请注明出处！
+    </li>
+  </ul>
+  <div class="tags">
+    
+      <a href="https://aifaith.github.io/Jesus/jtcrgQ64E/"># 新约-马太福音</a>
+    
+  </div>
+  <div class="nav">
+    <div class="nav-prev">
       
-        
-          
-        
+    </div>
+    <div class="nav-next">
       
-        
-          
-        
-          
-        
-      
-        
-          
-        
-          
-        
-      
-        
-          
-        
-          
-        
-          
-        
-      
-        
-          
-        
-      
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-      
-        
-          
-        
-      
-        
-          
-        
-          
-        
-      
-        
-          
-        
-          
-        
-      
-        
-          
-        
-          
-        
-          
-        
-      
-        
-          
-        
-          
-        
-      
-        
-          
-        
-          
-        
-          
-        
-      
-        
-          
-        
-          
-        
-      
-        
-          
-        
-          
-        
-          
-        
-      
-        
-          
-        
-      
-        
-          
-        
-          
-        
-      
-        
-          
-        
-      
-        
-          
-        
-      
-        
-          
-        
-          
-        
-          
-        
-      
-        
-          
-        
-          
-        
-          
-        
-      
-        
-          
-        
-          
-        
-      
-        
-          
-        
-          
-        
-          
-        
-      
-        
-          
-        
-          
-        
-          
-        
-          
-        
-      
-        
-          
-        
-          
-        
-          
-        
-      
-        
-          
-        
-      
-        
-      
-        
+        <a class="nav-pc-next" title="新约-罗马书  新约-使徒行传  新约-启示录（不可论断弟兄、致外邦信徒的信、给推雅推喇教会的信）" href="https://aifaith.github.io/Jesus/post/新约-罗马书  新约-使徒行传  新约-启示录（不可论断弟兄、致外邦信徒的信、给推雅推喇教会的信）/">新约-罗马书  新约-使徒行传  新约-启示录（不可论断弟兄、致外邦信徒的信、给推雅推喇教会的信）</a>
+        <a class="nav-mobile-next" title="新约-罗马书  新约-使徒行传  新约-启示录（不可论断弟兄、致外邦信徒的信、给推雅推喇教会的信）" href="https://aifaith.github.io/Jesus/post/新约-罗马书  新约-使徒行传  新约-启示录（不可论断弟兄、致外邦信徒的信、给推雅推喇教会的信）/">下一篇</a>
+        <i class="fa fa-chevron-right"></i>
       
     </div>
   </div>
 </div>
-                  </section>
-                </div>
-              </div>
+              
+  
+
+            </div>
           </div>
         </div>
       </div>
